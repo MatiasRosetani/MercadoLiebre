@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const dotenv = require('dotenv').config();
 
 app.use('/static', express.static(__dirname + '/public'));
 
-/* const PORT = process.env.PORT || 3000;
-app.listen(PORT,() => console.log('servidor corriendo en el puerto ${port}')); */
+app.listen(process.env.PORT || 3000, ()=>{
+    console.log('Servidor funcionando');
+});
 
 app.get('/', (req,res)=>{
     res.sendFile(__dirname + '/views/home.html');
@@ -16,8 +16,4 @@ app.get('/login', (req,res)=>{
 
 app.get('/register', (req,res)=>{
     res.sendFile(__dirname + '/views/register.html');
-});
-
-app.listen(process.env.PORT, ()=>{
-    console.log('servidor corriendo');
 });
