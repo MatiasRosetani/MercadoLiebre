@@ -3,7 +3,7 @@ const dotenv = require('dotenv').config();
 
 const app = express();
 
-app.use('/static', express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/home.html');
