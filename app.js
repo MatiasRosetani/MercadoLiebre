@@ -1,8 +1,10 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
+const path = require('path');
 
 const app = express();
 
+const publicPath = path.resolve(__dirname, './public');
 app.use('/static', express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
