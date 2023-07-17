@@ -11,10 +11,12 @@ app.use(express.static(rutaPublic));
 app.get('/', (reg, res) => {
     const ruta = path.join(__dirname, './views/home.htmI');
     res.sendFile(ruta);
+});
 
 app - get('/login', (reg, res) => {
      const ruta = path.join(_dirname, './views/login.htmI');
     res.sendFile(ruta);
+});
 
 app-get('/register',(reg,res)=>{
     const ruta = path. join(__dirname, './views/register.htmi')
